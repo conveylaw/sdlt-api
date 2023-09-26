@@ -1,7 +1,5 @@
 package com.redmonkeysoftware.sdlt.model;
 
-import com.redmonkeysoftware.sdlt.model.request.sdlt.SDLT;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -300,6 +298,8 @@ public class SdltImportRequest implements Serializable {
     protected String purchaser2Address4;
     @SdltXmlValue("SDLT_Purchaser2ActingAsTrusteeYesNo")
     protected Boolean purchaser2ActingAsTrustee;
+    @SdltXmlValue("LTT_Purchaser1Certificate")
+    protected String purchaser1Certificate;
     @SdltXmlValue("SDLT2")
     protected List<Sdlt2> sdlt2s = new ArrayList<>();
     @SdltXmlValue("SDLT3")
@@ -1481,5 +1481,11 @@ public class SdltImportRequest implements Serializable {
 
     public void setPurchaserAgentDxExchange(String purchaserAgentDxExchange) {
         this.purchaserAgentDxExchange = purchaserAgentDxExchange;
+    }
+    public void setPurchaser1Certificate(String purchaser1Certificate){
+        this.purchaser1Certificate = purchaser1Certificate;
+    }
+    public String getPurchaser1Certificate(){
+        return purchaser1Certificate;
     }
 }
