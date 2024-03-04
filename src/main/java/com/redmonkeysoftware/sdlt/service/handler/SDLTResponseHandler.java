@@ -2,17 +2,18 @@ package com.redmonkeysoftware.sdlt.service.handler;
 
 import com.redmonkeysoftware.sdlt.model.SdltXmlHelper;
 import com.redmonkeysoftware.sdlt.model.response.SDLTResponse;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.entity.ContentType;
 import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SDLTResponseHandler<T> implements ResponseHandler<T> {
 

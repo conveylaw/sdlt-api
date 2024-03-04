@@ -21,11 +21,11 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 
@@ -168,6 +168,16 @@ public class SdltXmlHelper {
 //        }
         status.setFilter(filter);
         return status;
+    }
+
+    public GetDocuments convertToGetDocuments(String documentId) {
+        GetDocuments request = apiObjectFactory.createGetDocuments();
+        if (StringUtils.isNotBlank(documentId)) {
+            GetDocuments.Document document = apiObjectFactory.createGetDocumentsDocument();
+            document.setDocumentID(documentId);
+            request.getDocument().add(document);
+        }
+        return request;
     }
 
     public GetPrintoutDocuments convertToPrintoutDocuments(String documentId) {

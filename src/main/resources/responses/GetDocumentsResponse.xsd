@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://sdlt.co.uk/API"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://sdlt.co.uk/API"
+           xmlns:ns="http://sdlt.co.uk/" xmlns:sdlt="http://sdlt.co.uk/SDLT">
+    <xs:element name="GetDocuments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

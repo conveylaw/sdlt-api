@@ -1,0 +1,112 @@
+<GetDocuments xmlns="http://sdlt.co.uk/API" xsi:schemaLocation="http://sdlt.co.uk/API https://online.sdlt.co.uk/schema/v1-0/GetDocumentsResponse.xsd">
+    <SDLT xmlns="http://sdlt.co.uk/SDLT" xsi:schemaLocation="http://sdlt.co.uk/SDLT https://online.sdlt.co.uk/schema/v1-0/SDLT.xsd" sdlt="http://sdlt.co.uk/">
+        <SDLT_UTRN>519835953MR</SDLT_UTRN>
+        <SDLT_IRMark>YUBV3F5QAYTYY2E4WETNTXMWMBGGYNVN</SDLT_IRMark>
+        <F_SDLTID>1703017</F_SDLTID>
+        <F_ID>HAY361-P</F_ID>
+        <F_UserID>16679</F_UserID>
+        <F_DateCreated>2024-02-20T09:30:00</F_DateCreated>
+        <F_UserNotes>Submitted by: ccarey</F_UserNotes>
+        <F_FTBExemptionYesNo>true</F_FTBExemptionYesNo>
+        <F_ClosedOffYesNo>false</F_ClosedOffYesNo>
+        <F_StampDutyPaidYesNo>false</F_StampDutyPaidYesNo>
+        <F_SubmissionStatus>delete-response</F_SubmissionStatus>
+        <F_SubmissionInfo>HMRC has received the IR-SDLT-LTR  document ref: HAY361-P 519835953MR at 09.33 on 20/02/2024. The associated IRmark was: YUBV3F5QAYTYY2E4WETNTXMWMBGGYNVN. We advise you to keep this receipt in both electronic and hardcopy versions for your records. You may wish to use them to identify your submission in the future.</F_SubmissionInfo>
+        <F_SubmissionDate>2024-02-20T09:33:00</F_SubmissionDate>
+        <F_ReturnDate>2024-02-20T09:33:00</F_ReturnDate>
+        <F_CountryCode>E</F_CountryCode>
+        <F_Confidential>false</F_Confidential>
+        <SDLT_PropertyTypeCode>01</SDLT_PropertyTypeCode>
+        <SDLT_TransactionDescriptionCode>A</SDLT_TransactionDescriptionCode>
+        <SDLT_InterestCreatedCode>LP</SDLT_InterestCreatedCode>
+        <SDLT_InterestCreatedCodeDetailed>LP_1</SDLT_InterestCreatedCodeDetailed>
+        <SDLT_DateOfTransaction>2024-02-20</SDLT_DateOfTransaction>
+        <SDLT_AnyRestrictionsYesNo>false</SDLT_AnyRestrictionsYesNo>
+        <SDLT_DateOfContract>2024-02-19</SDLT_DateOfContract>
+        <SDLT_AnyLandExchangedYesNo>false</SDLT_AnyLandExchangedYesNo>
+        <SDLT_PursantToPreviousAgreementYesNo>false</SDLT_PursantToPreviousAgreementYesNo>
+        <SDLT_ClaimingTaxReliefYesNo>true</SDLT_ClaimingTaxReliefYesNo>
+        <SDLT_IfYesTaxReliefReasonCode>32</SDLT_IfYesTaxReliefReasonCode>
+        <SDLT_FTBConfirmed>true</SDLT_FTBConfirmed>
+        <SDLT_TotalConsiderationIncVAT>120000</SDLT_TotalConsiderationIncVAT>
+        <SDLT_PurchaserTypeCode>1</SDLT_PurchaserTypeCode>
+        <SDLT_ConsiderationFormCode1>30</SDLT_ConsiderationFormCode1>
+        <SDLT_TransactionLinkedYesNo>false</SDLT_TransactionLinkedYesNo>
+        <SDLT_TotalTaxDue>0</SDLT_TotalTaxDue>
+        <SDLT_TotalTaxPaid>0</SDLT_TotalTaxPaid>
+        <SDLT_TotalTaxPaidIncPenaltyYesNo>false</SDLT_TotalTaxPaidIncPenaltyYesNo>
+        <SDLT_LeaseTypeCode>R</SDLT_LeaseTypeCode>
+        <SDLT_LeaseStartDate>2006-06-01</SDLT_LeaseStartDate>
+        <SDLT_LeaseEndDate>3006-06-01</SDLT_LeaseEndDate>
+        <SDLT_TotalAnnualRentIncVAT>0</SDLT_TotalAnnualRentIncVAT>
+        <SDLT_NumberOfPropertiesIncluded>1</SDLT_NumberOfPropertiesIncluded>
+        <SDLT_PaperCertificateRemoved>no</SDLT_PaperCertificateRemoved>
+        <SDLT_PropertyAddressPostcode>IP12 2BF</SDLT_PropertyAddressPostcode>
+        <SDLT_PropertyAddressBuildingNo>13</SDLT_PropertyAddressBuildingNo>
+        <SDLT_PropertyAddress1>Library Mews</SDLT_PropertyAddress1>
+        <SDLT_PropertyAddress2>Rendlesham</SDLT_PropertyAddress2>
+        <SDLT_PropertyAddress3>Woodbridge</SDLT_PropertyAddress3>
+        <SDLT_PropertyLocalAuthorityCode>3530</SDLT_PropertyLocalAuthorityCode>
+        <SDLT_PropertyTitleNumber>SK318887</SDLT_PropertyTitleNumber>
+        <SDLT_PropertyPlanAttachedYesNo>false</SDLT_PropertyPlanAttachedYesNo>
+        <SDLT_TotalNumberOfVendors>1</SDLT_TotalNumberOfVendors>
+        <SDLT_Vendor1Surname>Bedwell</SDLT_Vendor1Surname>
+        <SDLT_Vendor1FirstName1>Sam</SDLT_Vendor1FirstName1>
+        <SDLT_Vendor1AddressPostcode>IP12 2BF</SDLT_Vendor1AddressPostcode>
+        <SDLT_Vendor1AddressBuildingNo>13</SDLT_Vendor1AddressBuildingNo>
+        <SDLT_Vendor1Address1>Library Mews</SDLT_Vendor1Address1>
+        <SDLT_Vendor1Address2>Rendlesham</SDLT_Vendor1Address2>
+        <SDLT_Vendor1Address3>Woodbridge</SDLT_Vendor1Address3>
+        <SDLT_VendorsAgentFirmName>Premier Property Lawyers</SDLT_VendorsAgentFirmName>
+        <SDLT_VendorsAgentAddressPostcode>LE19 1SH</SDLT_VendorsAgentAddressPostcode>
+        <SDLT_VendorsAgentAddress1>1 Frances Way</SDLT_VendorsAgentAddress1>
+        <SDLT_VendorsAgentAddress2>Grove Park Enderby</SDLT_VendorsAgentAddress2>
+        <SDLT_VendorsAgentAddress3>Leicester</SDLT_VendorsAgentAddress3>
+        <SDLT_VendorsAgentEmail>sequence@premierpropertylawyers.com</SDLT_VendorsAgentEmail>
+        <SDLT_VendorsAgentReference>S2EW-1094018.0</SDLT_VendorsAgentReference>
+        <SDLT_VendorsAgentTelNo>0344 980 2459</SDLT_VendorsAgentTelNo>
+        <SDLT_Purchaser1NINumber>NE627020C</SDLT_Purchaser1NINumber>
+        <SDLT_Purchaser1DoB>1964-12-31</SDLT_Purchaser1DoB>
+        <SDLT_TotalNumberOfPurchasers>1</SDLT_TotalNumberOfPurchasers>
+        <SDLT_Purchaser1Title>Mr</SDLT_Purchaser1Title>
+        <SDLT_Purchaser1Surname>Haysom</SDLT_Purchaser1Surname>
+        <SDLT_Purchaser1FirstName1>Stephen</SDLT_Purchaser1FirstName1>
+        <SDLT_Purchaser1FirstName2>Anthony</SDLT_Purchaser1FirstName2>
+        <SDLT_Purchaser1AddressSameQ28YesNo>false</SDLT_Purchaser1AddressSameQ28YesNo>
+        <SDLT_Purchaser1AddressPostcode>IP13 0EJ</SDLT_Purchaser1AddressPostcode>
+        <SDLT_Purchaser1Address1>Lawsons</SDLT_Purchaser1Address1>
+        <SDLT_Purchaser1Address2>Framlingham Road</SDLT_Purchaser1Address2>
+        <SDLT_Purchaser1Address3>Easton</SDLT_Purchaser1Address3>
+        <SDLT_Purchaser1Address4>Woodbridge</SDLT_Purchaser1Address4>
+        <SDLT_Purchaser1ActingAsTrusteeYesNo>false</SDLT_Purchaser1ActingAsTrusteeYesNo>
+        <SDLT_PurchaserVendorConnectedYesNo>false</SDLT_PurchaserVendorConnectedYesNo>
+        <SDLT_PurchaserCertificateRemoved>Agent</SDLT_PurchaserCertificateRemoved>
+        <SDLT_Purchaser1CorrespondenceToYesNo>true</SDLT_Purchaser1CorrespondenceToYesNo>
+        <SDLT_PurchaserClientAuthorisation>Via Signed Form</SDLT_PurchaserClientAuthorisation>
+        <SDLT_PurchaserAgentFirmName>Convey Law</SDLT_PurchaserAgentFirmName>
+        <SDLT_PurchaserAgentAddressPostcode>NP20 1JE</SDLT_PurchaserAgentAddressPostcode>
+        <SDLT_PurchaserAgentAddress1>Maxwell Chambers</SDLT_PurchaserAgentAddress1>
+        <SDLT_PurchaserAgentAddress2>34 38 Stow Hill</SDLT_PurchaserAgentAddress2>
+        <SDLT_PurchaserAgentAddress3>Newport</SDLT_PurchaserAgentAddress3>
+        <SDLT_PurchaserAgentReference>HAY361-P</SDLT_PurchaserAgentReference>
+        <SDLT_PurchaserAgentTelNo>01633 261241</SDLT_PurchaserAgentTelNo>
+        <SDLT_PurchaserAgentEmail>chelseacarey@conveylaw.com</SDLT_PurchaserAgentEmail>
+        <SDLT_ResidencyStatusYesNo>false</SDLT_ResidencyStatusYesNo>
+        <SDLT_CloseCompanyStatusYesNo>false</SDLT_CloseCompanyStatusYesNo>
+        <LTT_Purchaser1Certificate>Agent</LTT_Purchaser1Certificate>
+        <AP1>
+            <AP1_IsVendorRepresented>true</AP1_IsVendorRepresented>
+            <AP1_VendorRepresentedBy>agent</AP1_VendorRepresentedBy>
+            <AP1_Vendor2RepresentedBy>agent</AP1_Vendor2RepresentedBy>
+            <AP1_PurchLenderChargeDate>2024-02-20</AP1_PurchLenderChargeDate>
+            <AP1_Purch2RepresentedBy>agent</AP1_Purch2RepresentedBy>
+            <AP1_VendorRole1>Transferor</AP1_VendorRole1>
+            <AP1_Vendor2Role1>Transferor</AP1_Vendor2Role1>
+            <AP1_PurchServiceAddress1>property</AP1_PurchServiceAddress1>
+            <AP1_Purch2ServiceAddress1>property</AP1_Purch2ServiceAddress1>
+            <AP1_PurchLender2RepresentedBy>agent</AP1_PurchLender2RepresentedBy>
+            <AP1_VendorLender2RepresentedBy>agent</AP1_VendorLender2RepresentedBy>
+            <MR01_ChargeDate>2024-02-20</MR01_ChargeDate>
+        </AP1>
+    </SDLT>
+</GetDocuments>

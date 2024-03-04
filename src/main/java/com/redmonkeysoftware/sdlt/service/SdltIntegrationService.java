@@ -1,28 +1,13 @@
 package com.redmonkeysoftware.sdlt.service;
 
-import com.redmonkeysoftware.sdlt.model.SdltAccountOtp;
-import com.redmonkeysoftware.sdlt.model.SdltDocument;
-import com.redmonkeysoftware.sdlt.model.SdltDocumentStatus;
-import com.redmonkeysoftware.sdlt.model.SdltImportRequest;
-import com.redmonkeysoftware.sdlt.model.SdltXmlHelper;
+import com.redmonkeysoftware.sdlt.model.*;
 import com.redmonkeysoftware.sdlt.model.exceptions.SdltException;
-import com.redmonkeysoftware.sdlt.model.response.GetAccountOTP;
-import com.redmonkeysoftware.sdlt.model.response.GetDocumentsStatus;
-import com.redmonkeysoftware.sdlt.model.response.GetPrintoutDocuments;
-import com.redmonkeysoftware.sdlt.model.response.ImportDocuments;
-import com.redmonkeysoftware.sdlt.model.response.Test;
-import com.redmonkeysoftware.sdlt.model.SdltAccessToken;
-import com.redmonkeysoftware.sdlt.model.request.sdlt.SDLT;
+import com.redmonkeysoftware.sdlt.model.response.*;
 import com.redmonkeysoftware.sdlt.service.handler.AccessTokenJsonResponseHandler;
 import com.redmonkeysoftware.sdlt.service.handler.SDLTResponseHandler;
-import java.io.Closeable;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -31,6 +16,14 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
+import org.w3c.dom.Element;
+
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SdltIntegrationService implements Closeable {
 
@@ -88,9 +81,19 @@ public class SdltIntegrationService implements Closeable {
             throw new SdltException("Error authenticating with SDLT - client authentication");
         }
     }
-   
-    
+
+
     protected <T> T processSdltCall(SdltAccessToken token, String clientId, String clientSecret, String url, Object apiRequest, Class<T> type) throws IOException, IllegalStateException, JAXBException {
+        //SdltAccessToken clientAuth = authenticateClient(clientId, clientSecret);
+        HttpPost post = new HttpPost(endpoint + url);
+        StringEntity entity = new StringEntity(SdltXmlHelper.getInstance().generateRequestXml(url, apiRequest));
+        post.addHeader("Authorization", "Bearer " + token.getAccessToken());
+        post.setEntity(entity);
+        T result = client.execute(post, new SDLTResponseHandler<>());
+        return result;
+    }
+
+    protected <T> T processSdltCall(SdltAccessToken token, String url, Object apiRequest, Class<T> type) throws IOException, IllegalStateException, JAXBException {
         //SdltAccessToken clientAuth = authenticateClient(clientId, clientSecret);
         HttpPost post = new HttpPost(endpoint + url);
         StringEntity entity = new StringEntity(SdltXmlHelper.getInstance().generateRequestXml(url, apiRequest));
@@ -118,6 +121,30 @@ public class SdltIntegrationService implements Closeable {
         } catch (IOException | IllegalStateException | JAXBException e) {
             logger.log(Level.SEVERE, "Error getting account OTP", e);
             throw new SdltException("Error getting account OTP: " + e.getMessage());
+        }
+    }
+
+    public String getSdltUtrn(SdltAccessToken token, String documentId) {
+        try {
+            GetDocuments result = processSdltCall(token, "GetDocuments", SdltXmlHelper.getInstance().convertToGetDocuments(documentId), GetDocuments.class);
+            for (Object sdltResult : result.getAny()) {
+                if (sdltResult instanceof Element) {
+                    var sdltElement = (Element) sdltResult;
+                    var sdltUtrnNodeList = sdltElement.getElementsByTagName("SDLT_UTRN");
+                    for (int i = 0; i < sdltUtrnNodeList.getLength(); i++) {
+                        var sdltUtrnElement = sdltUtrnNodeList.item(i);
+                        var sdltUtrn = sdltUtrnElement.getTextContent();
+                        if (StringUtils.isNotBlank(sdltUtrn)) {
+                            return sdltUtrn;
+                        }
+                    }
+                }
+            }
+            return null;
+        } catch (IOException | IllegalStateException | JAXBException e) {
+            var msg = String.format("Error getting sdlt utrn: %s", ExceptionUtils.getMessage(e));
+            logger.log(Level.SEVERE, msg, e);
+            throw new SdltException(msg);
         }
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.redmonkeysoftware</groupId>
     <artifactId>sdlt-api</artifactId>
@@ -48,9 +49,9 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.14.0</version>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-maven-plugin</artifactId>
+                <version>4.0.3</version>
                 <executions>
                     <execution>
                         <id>generate-sdltmessage</id>
@@ -59,7 +60,8 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <schemaDirectory>${project.basedir}/src/main/resources/requests/sdltmessage</schemaDirectory>
+                            <schemaDirectory>${project.basedir}/src/main/resources/requests/sdltmessage
+                            </schemaDirectory>
                             <generateDirectory>${project.build.directory}/generated-sources/jaxb</generateDirectory>
                             <generatePackage>com.redmonkeysoftware.sdlt.model.request.sdltmessage</generatePackage>
                             <schemaIncludes>
@@ -121,9 +123,12 @@
                     </args>
                     <plugins>
                         <plugin>
-                            <groupId>org.jvnet.jaxb2_commons</groupId>
-                            <artifactId>jaxb2-basics-annotate</artifactId>
-                            <version>1.0.2</version>
+                            <groupId>org.jvnet.jaxb</groupId>
+                            <artifactId>jaxb-plugin-annotate</artifactId>
+                            <version>4.0.3</version>
+                            <!--                            <groupId>org.jvnet.jaxb2_commons</groupId>-->
+                            <!--                            <artifactId>jaxb2-basics-annotate</artifactId>-->
+                            <!--                            <version>1.0.2</version>-->
                         </plugin>
                     </plugins>
                 </configuration>
@@ -134,17 +139,17 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
+            <version>3.14.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.13</version>
+            <version>4.5.14</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.10.5</version>
+            <version>[2.10.5,)</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -152,19 +157,31 @@
             <version>2.8.0</version>
         </dependency>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.1</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
+            <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-core</artifactId>
-            <version>2.3.0</version>
+            <version>4.0.4</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>2.3.0</version>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>4.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
